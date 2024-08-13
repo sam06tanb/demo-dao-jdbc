@@ -13,7 +13,7 @@ public class DB {
             try {
                 conn.close();
             } catch (SQLException e) {
-                throw new DbExcpetion(e.getMessage());
+                throw new DbException(e.getMessage());
             }
         }
     }
@@ -23,7 +23,7 @@ public class DB {
             try {
                 st.close();
             } catch (SQLException e) {
-                throw new DbExcpetion(e.getMessage());
+                throw new DbException(e.getMessage());
             }
         }
     }
@@ -33,7 +33,7 @@ public class DB {
             try {
                 rs.close();
             } catch (SQLException e) {
-                throw new DbExcpetion(e.getMessage());
+                throw new DbException(e.getMessage());
             }
         }
     }
