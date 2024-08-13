@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
@@ -17,6 +18,8 @@ public class Main {
 
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
         Connection conn;
+
+        Scanner sc = new Scanner(System.in);
 
         try {
             conn = connectionJDBC.getConnection();
@@ -51,6 +54,14 @@ public class Main {
             seller.setName("Martha Wayne");
             sellerDao.update(seller);
             System.out.println("Update completed");
+
+            System.out.println("\n=== TEST 6: seller delete =====");
+            System.out.println("Enter id for delete test: ");
+            int id = sc.nextInt();
+            sellerDao.deleteById(id);
+            System.out.println("Delete completed");
+
+            sc.close();
         }
         catch (SQLException ex) {
             throw new RuntimeException(ex);
