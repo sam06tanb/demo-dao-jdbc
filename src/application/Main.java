@@ -5,6 +5,8 @@ import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -30,6 +32,12 @@ public class Main {
             List<Seller> list = sellerDao.findByDepartment(department);
             for (Seller obj : list) {
                 System.out.println(obj);
+
+            System.out.println("\n=== TEST 3: seller findAll ====");
+            list = sellerDao.findAll();
+            for (Seller ob : list) {
+                System.out.println(ob);
+            }
             }
 
         }
